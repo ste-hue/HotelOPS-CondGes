@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# 🎯 ORTI Finance - Unified Command (MCP Supabase Direct)
+# Usage: ./orti [start|stop|status]
+
+case "${1:-help}" in
+  "start")
+    echo "🚀 Starting ORTI Finance..."
+    ./orti-start.sh
+    ;;
+  "stop")
+    echo "🛑 Stopping ORTI Finance..."
+    pkill -f "vite\|node.*5173" 2>/dev/null || true
+    echo "✅ All processes stopped"
+    ;;
+  "status")
+    echo "📊 ORTI Finance Status..."
+    echo ""
+    if curl -s "http://localhost:5173" | grep -q "DOCTYPE"; then
+      echo "✅ Frontend: Active on http://localhost:5173"
+    else
+      echo "❌ Frontend: Not running"
+    fi
+    echo ""
+    echo "🔧 Architecture: Frontend → MCP Supabase → Database"
+    echo "📍 Dashboard: http://localhost:5173"
+    ;;
+  *)
+    echo "🎯 ORTI Finance - MCP Direct Architecture"
+    echo ""
+    echo "  ./orti start   🚀 Start dashboard"
+    echo "  ./orti stop    🛑 Stop all processes"  
+    echo "  ./orti status  📊 Check status"
+    echo ""
+    echo "📍 Access: http://localhost:5173"
+    echo "🏗️ Architecture: React → Supabase Direct → Database"
+    echo ""
+    ;;
+esac

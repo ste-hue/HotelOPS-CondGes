@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "title": "CONDGES V4.0 - Proiezioni 2025 Complete",
+    "generated": "2025-09-21",
+    "base_dati": [
+      "Bilancini Set-Ott 2024 (confermati)",
+      "Bilancio finale 2024 INTUR",
+      "Pattern stagionali nostri dati CSV",
+      "Crescita stimata +10% vs 2024"
+    ],
+    "metodologia": "Pattern stagionali + Crescita organica",
+    "note": "Include €180K gestione/fitti ottobre come ricorrente"
+  },
+  "proiezioni_mensili": {
+    "gennaio": {
+      "ricavi": 94501.33,
+      "costi_operativi": 80326.13,
+      "ebitda": 14175.2,
+      "ebitda_pct": 15.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": -6824.8
+    },
+    "febbraio": {
+      "ricavi": 94501.33,
+      "costi_operativi": 85051.2,
+      "ebitda": 9450.13,
+      "ebitda_pct": 10.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": -11549.87
+    },
+    "marzo": {
+      "ricavi": 141751.99,
+      "costi_operativi": 113401.6,
+      "ebitda": 28350.4,
+      "ebitda_pct": 20.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 7350.4
+    },
+    "aprile": {
+      "ricavi": 283503.99,
+      "costi_operativi": 184277.59,
+      "ebitda": 99226.4,
+      "ebitda_pct": 35.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 78226.4
+    },
+    "maggio": {
+      "ricavi": 708759.97,
+      "costi_operativi": 354379.99,
+      "ebitda": 354379.99,
+      "ebitda_pct": 50.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 333379.99
+    },
+    "giugno": {
+      "ricavi": 945013.3,
+      "costi_operativi": 378005.32,
+      "ebitda": 567007.98,
+      "ebitda_pct": 60.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 546007.98
+    },
+    "luglio": {
+      "ricavi": 1086765.3,
+      "costi_operativi": 380367.85,
+      "ebitda": 706397.44,
+      "ebitda_pct": 65.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 685397.44
+    },
+    "agosto": {
+      "ricavi": 1134015.96,
+      "costi_operativi": 340204.79,
+      "ebitda": 793811.17,
+      "ebitda_pct": 70.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 772811.17
+    },
+    "settembre": {
+      "ricavi": 850511.97,
+      "costi_operativi": 246648.47,
+      "ebitda": 603863.5,
+      "ebitda_pct": 71.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 582863.5
+    },
+    "ottobre": {
+      "ricavi": 567007.98,
+      "costi_operativi": 411080.79,
+      "ebitda": 155927.19,
+      "ebitda_pct": 27.5,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 134927.19
+    },
+    "novembre": {
+      "ricavi": 141751.99,
+      "costi_operativi": 120489.2,
+      "ebitda": 21262.8,
+      "ebitda_pct": 15.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": 262.8
+    },
+    "dicembre": {
+      "ricavi": 94501.33,
+      "costi_operativi": 75601.06,
+      "ebitda": 18900.27,
+      "ebitda_pct": 20.0,
+      "oneri_finanziari": 21000,
+      "risultato_ante_imposte": -2099.73
+    }
+  },
+  "totali_annuali": {
+    "ricavi_totali": 6142586.45,
+    "ebitda_totale": 3372752.4677,
+    "ebitda_pct_medio": 54.9076923076923,
+    "risultato_totale": 3120752.4677
+  },
+  "scenari": {
+    "conservativo": {
+      "ricavi": 5835457.1274999995,
+      "ebitda": 3035477.22093,
+      "note": "Scenario -5% ricavi, -10% EBITDA"
+    },
+    "ottimistico": {
+      "ricavi": 7063974.4174999995,
+      "ebitda": 4047302.9612399996,
+      "note": "Scenario +15% ricavi, +20% EBITDA"
+    }
+  }
+}

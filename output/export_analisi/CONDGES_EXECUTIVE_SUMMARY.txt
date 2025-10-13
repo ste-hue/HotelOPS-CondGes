@@ -1,0 +1,29 @@
+🎯 CONDGES V4.0 - EXECUTIVE SUMMARY
+==================================================
+
+📅 PERIODO ANALIZZATO: 8 mesi del 2025
+🏨 ASSET: Hotel (76 camere), Residence Angelina (19 unità), CVM (8 unità)
+
+💰 DATI REALI 2025:
+   📈 Ricavi Totali: €2,726,829.89
+   👥 Costi Personale: €661,237.15 (24.2%)
+   📊 Margine Totale: €677,204.51 (24.8%)
+
+📊 PROIEZIONI ANNUALI 2025:
+   📈 Ricavi: €4,090,244.83
+   👥 Personale: €991,855.73
+   📊 Margine: €1,015,806.77 (24.8%)
+
+🔍 SCOPERTA CRITICA:
+   ⚠️  Bilanci sottostimavano personale del 68%
+   ✅ Dati CSV reali ora integrati nel sistema
+   📈 Margini corretti: più realistici e accurati
+
+📁 FILE GENERATI PER ANALISI:
+   - CONDGES_DATI_MENSILI_COMPLETI.csv
+   - CONDGES_SUMMARY_ANNUALE.csv
+   - CONDGES_KPI_GRUPPO_MENSILI.csv
+   - CONDGES_ANALISI_COMPLETA.xlsx
+   - CONDGES_ALLOCAZIONE_COMPLETA_PER_ASSET.json
+
+🕐 Report generato: 2025-09-21 11:12:52

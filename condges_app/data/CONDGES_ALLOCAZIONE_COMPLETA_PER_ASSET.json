@@ -1,0 +1,694 @@
+{
+  "metadata": {
+    "title": "CONDGES V4.0 - Allocazione Costi per Asset",
+    "generated": "2025-09-16",
+    "source": "PDF bilanci originali",
+    "methodology": "Anti-double counting + Physical allocation",
+    "assets": {
+      "HOTEL": {
+        "units": 76,
+        "type": "camere"
+      },
+      "RESIDENCE_ANGELINA": {
+        "units_2024": 55,
+        "units_2025": 19,
+        "type": "appartamenti"
+      },
+      "CVM": {
+        "units": 8,
+        "type": "appartamenti"
+      }
+    },
+    "last_updated": "2025-09-21",
+    "personnel_data_source": "CSV reali (PC_csv/ORTI/)",
+    "note": "Aggiornato con dati personale reali - incremento 68% rispetto bilanci"
+  },
+  "data": {
+    "2024": {
+      "GENNAIO": {
+        "HOTEL": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 0,
+            "commerciale": 0,
+            "totale": 0
+          },
+          "margine": 0,
+          "margine_pct": 0
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 0,
+            "commerciale": 0,
+            "totale": 0
+          },
+          "margine": 0,
+          "margine_pct": 0
+        },
+        "CVM": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 0,
+            "commerciale": 0,
+            "totale": 0
+          },
+          "margine": 0,
+          "margine_pct": 0
+        }
+      },
+      "FEBBRAIO": {
+        "HOTEL": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 667.1323741007195,
+            "produzione": 0,
+            "gestione": 3964.980143884892,
+            "commerciale": 0,
+            "totale": 4632.112517985612
+          },
+          "margine": -4632.112517985612,
+          "margine_pct": 0
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 482.7931654676259,
+            "produzione": 0,
+            "gestione": 2869.3935251798557,
+            "commerciale": 0,
+            "totale": 3352.1866906474816
+          },
+          "margine": -3352.1866906474816,
+          "margine_pct": 0
+        },
+        "CVM": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 70.22446043165469,
+            "produzione": 0,
+            "gestione": 417.3663309352518,
+            "commerciale": 0,
+            "totale": 487.5907913669065
+          },
+          "margine": -487.5907913669065,
+          "margine_pct": 0
+        }
+      },
+      "MARZO": {
+        "HOTEL": {
+          "ricavi": 5314.94,
+          "costi": {
+            "personale": 664.8633093525181,
+            "produzione": 3877.824526791965,
+            "gestione": 40475.99798561152,
+            "commerciale": 0,
+            "totale": 45018.685821756
+          },
+          "margine": -39703.745821756,
+          "margine_pct": -747.0215246410307
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 3648.88,
+          "costi": {
+            "personale": 481.1510791366906,
+            "produzione": 2662.2532633144815,
+            "gestione": 29291.840647482015,
+            "commerciale": 0,
+            "totale": 32435.244989933188
+          },
+          "margine": -28786.364989933187,
+          "margine_pct": -788.9096103443574
+        },
+        "CVM": {
+          "ricavi": 6618.65,
+          "costi": {
+            "personale": 69.98561151079137,
+            "produzione": 4829.022209893554,
+            "gestione": 4260.631366906475,
+            "commerciale": 0,
+            "totale": 9159.63918831082
+          },
+          "margine": -2540.9891883108194,
+          "margine_pct": -38.391351534086546
+        }
+      },
+      "APRILE": {
+        "HOTEL": {
+          "ricavi": 118300.05,
+          "costi": {
+            "personale": 13954.28892086331,
+            "produzione": 22757.886104851274,
+            "gestione": 65099.51683453238,
+            "commerciale": 682.232398777398,
+            "totale": 102493.92425902437
+          },
+          "margine": 15806.125740975636,
+          "margine_pct": 13.36104738837865
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 46442.84,
+          "costi": {
+            "personale": 10098.498561151078,
+            "produzione": 8934.407577222755,
+            "gestione": 47111.492446043165,
+            "commerciale": 267.8342920331385,
+            "totale": 66412.23287645013
+          },
+          "margine": -19969.392876450132,
+          "margine_pct": -42.99778582974283
+        },
+        "CVM": {
+          "ricavi": 17170.78,
+          "costi": {
+            "personale": 1468.8725179856117,
+            "produzione": 3303.2163179259696,
+            "gestione": 6852.580719424461,
+            "commerciale": 99.0233091894633,
+            "totale": 11723.692864525505
+          },
+          "margine": 5447.087135474494,
+          "margine_pct": 31.72300347144681
+        }
+      },
+      "MAGGIO": {
+        "HOTEL": {
+          "ricavi": 326503.53,
+          "costi": {
+            "personale": 61102.27223021583,
+            "produzione": 56944.62491797761,
+            "gestione": 34943.66820143885,
+            "commerciale": 1511.3942316796902,
+            "totale": 154501.959581312
+          },
+          "margine": 172001.57041868803,
+          "margine_pct": 52.679850174571776
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 88162.18,
+          "costi": {
+            "personale": 44218.749640287766,
+            "produzione": 15376.13474516256,
+            "gestione": 25288.180935251796,
+            "commerciale": 408.10526705272224,
+            "totale": 85291.17058775485
+          },
+          "margine": 2871.009412245141,
+          "margine_pct": 3.256509097489582
+        },
+        "CVM": {
+          "ricavi": 23359.22,
+          "costi": {
+            "personale": 6431.818129496403,
+            "produzione": 4074.020336859822,
+            "gestione": 3678.2808633093528,
+            "commerciale": 108.13050126758766,
+            "totale": 14292.249830933164
+          },
+          "margine": 9066.970169066835,
+          "margine_pct": 38.81538068936735
+        }
+      },
+      "GIUGNO": {
+        "HOTEL": {
+          "ricavi": 410318.44,
+          "costi": {
+            "personale": 33304.96057553957,
+            "produzione": 96431.87881478526,
+            "gestione": 104094.71769784174,
+            "commerciale": 8753.076606343862,
+            "totale": 242584.63369451044
+          },
+          "margine": 167733.80630548956,
+          "margine_pct": 40.87893449426488
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 144213.26,
+          "costi": {
+            "personale": 24102.274100719424,
+            "produzione": 33892.59232854638,
+            "gestione": 75331.70359712231,
+            "commerciale": 3076.414777826181,
+            "totale": 136402.98480421427
+          },
+          "margine": 7810.27519578574,
+          "margine_pct": 5.415781597188594
+        },
+        "CVM": {
+          "ricavi": 26592.35,
+          "costi": {
+            "personale": 3505.7853237410072,
+            "produzione": 6249.658856668384,
+            "gestione": 10957.338705035972,
+            "commerciale": 567.2786158299593,
+            "totale": 21280.06150127532
+          },
+          "margine": 5312.28849872468,
+          "margine_pct": 19.97675458816043
+        }
+      },
+      "LUGLIO": {
+        "HOTEL": {
+          "ricavi": 493529.26,
+          "costi": {
+            "personale": 43994.048920863315,
+            "produzione": 102563.96007635177,
+            "gestione": 89926.47510791368,
+            "commerciale": 1354.175586393981,
+            "totale": 237838.6596915227
+          },
+          "margine": 255690.6003084773,
+          "margine_pct": 51.80860002271746
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 238697.24,
+          "costi": {
+            "personale": 31837.79856115108,
+            "produzione": 49605.43614718073,
+            "gestione": 65078.370143884895,
+            "commerciale": 654.9519980793534,
+            "totale": 147176.55685029604
+          },
+          "margine": 91520.68314970395,
+          "margine_pct": 38.341743352249885
+        },
+        "CVM": {
+          "ricavi": 35556.62,
+          "costi": {
+            "personale": 4630.952517985612,
+            "produzione": 7389.2837764675005,
+            "gestione": 9465.94474820144,
+            "commerciale": 97.56241552666592,
+            "totale": 21583.74345818122
+          },
+          "margine": 13972.876541818783,
+          "margine_pct": 39.29753880379739
+        }
+      },
+      "AGOSTO": {
+        "HOTEL": {
+          "ricavi": 541322.05,
+          "costi": {
+            "personale": 63896.11424460432,
+            "produzione": 52274.520327752834,
+            "gestione": 98008.05266187052,
+            "commerciale": 2423.557313608741,
+            "totale": 216602.2445478364
+          },
+          "margine": 324719.8054521637,
+          "margine_pct": 59.98643606927958
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 312027.79,
+          "costi": {
+            "personale": 46240.60899280575,
+            "produzione": 30131.976059683493,
+            "gestione": 70926.88021582733,
+            "commerciale": 1396.9821338400538,
+            "totale": 148696.44740215663
+          },
+          "margine": 163331.34259784335,
+          "margine_pct": 52.3451268868851
+        },
+        "CVM": {
+          "ricavi": 49969.88,
+          "costi": {
+            "personale": 6725.906762589928,
+            "produzione": 4825.503612563666,
+            "gestione": 10316.63712230216,
+            "commerciale": 223.7205525512052,
+            "totale": 22091.76805000696
+          },
+          "margine": 27878.11194999304,
+          "margine_pct": 55.78983169459891
+        }
+      }
+    },
+    "2025": {
+      "GENNAIO": {
+        "HOTEL": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 0,
+            "commerciale": 0,
+            "totale": 0
+          },
+          "margine": 0,
+          "margine_pct": 0
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 0,
+            "commerciale": 0,
+            "totale": 0
+          },
+          "margine": 0,
+          "margine_pct": 0
+        },
+        "CVM": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 0,
+            "commerciale": 0,
+            "totale": 0
+          },
+          "margine": 0,
+          "margine_pct": 0
+        }
+      },
+      "FEBBRAIO": {
+        "HOTEL": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 15506.243106796115,
+            "commerciale": 0,
+            "totale": 15506.243106796115
+          },
+          "margine": -15506.243106796115,
+          "margine_pct": 0
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 3876.560776699029,
+            "commerciale": 0,
+            "totale": 3876.560776699029
+          },
+          "margine": -3876.560776699029,
+          "margine_pct": 0
+        },
+        "CVM": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 0,
+            "produzione": 0,
+            "gestione": 1632.2361165048544,
+            "commerciale": 0,
+            "totale": 1632.2361165048544
+          },
+          "margine": -1632.2361165048544,
+          "margine_pct": 0
+        }
+      },
+      "MARZO": {
+        "HOTEL": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 22323.64,
+            "produzione": 0,
+            "gestione": 36613.02951456311,
+            "commerciale": 0,
+            "totale": 58936.67
+          },
+          "margine": -58936.67,
+          "margine_pct": 0
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 5580.91,
+            "produzione": 0,
+            "gestione": 9153.257378640776,
+            "commerciale": 0,
+            "totale": 14734.17
+          },
+          "margine": -14734.17,
+          "margine_pct": 0
+        },
+        "CVM": {
+          "ricavi": 0,
+          "costi": {
+            "personale": 2349.86,
+            "produzione": 0,
+            "gestione": 3854.003106796116,
+            "commerciale": 0,
+            "totale": 6203.86
+          },
+          "margine": -6203.86,
+          "margine_pct": 0
+        }
+      },
+      "APRILE": {
+        "HOTEL": {
+          "ricavi": 81009.42,
+          "costi": {
+            "personale": 67413.8,
+            "produzione": 21528.4730384074,
+            "gestione": 106171.52776699029,
+            "commerciale": 691.9933529526597,
+            "totale": 195805.79
+          },
+          "margine": -114796.37,
+          "margine_pct": -141.7
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 19530.31,
+          "costi": {
+            "personale": 16853.45,
+            "produzione": 5190.232842880969,
+            "gestione": 26542.88194174757,
+            "commerciale": 166.8305328084667,
+            "totale": 48753.4
+          },
+          "margine": -29223.09,
+          "margine_pct": -149.6
+        },
+        "CVM": {
+          "ricavi": 15281.44,
+          "costi": {
+            "personale": 7096.19,
+            "produzione": 4061.084118711631,
+            "gestione": 11175.950291262134,
+            "commerciale": 130.5361142388736,
+            "totale": 22463.76
+          },
+          "margine": -7182.32,
+          "margine_pct": -47.0
+        }
+      },
+      "MAGGIO": {
+        "HOTEL": {
+          "ricavi": 374709.7,
+          "costi": {
+            "personale": 91359.72,
+            "produzione": 74537.50856489346,
+            "gestione": 40568.829514563105,
+            "commerciale": 1058.812899145646,
+            "totale": 207524.87
+          },
+          "margine": 167184.83,
+          "margine_pct": 44.6
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 46055.25,
+          "costi": {
+            "personale": 22839.93,
+            "produzione": 9161.341676858936,
+            "gestione": 10142.207378640776,
+            "commerciale": 130.13779139792086,
+            "totale": 42273.62
+          },
+          "margine": 3781.63,
+          "margine_pct": 8.2
+        },
+        "CVM": {
+          "ricavi": 18947.35,
+          "costi": {
+            "personale": 9616.81,
+            "produzione": 3769.019758247609,
+            "gestione": 4270.403106796116,
+            "commerciale": 53.539309456433216,
+            "totale": 17709.77
+          },
+          "margine": 1237.58,
+          "margine_pct": 6.5
+        }
+      },
+      "GIUGNO": {
+        "HOTEL": {
+          "ricavi": 526405.12,
+          "costi": {
+            "personale": 99241.34,
+            "produzione": 78726.18467856274,
+            "gestione": 44717.14563106797,
+            "commerciale": 4218.934287268793,
+            "totale": 226903.6
+          },
+          "margine": 299501.52,
+          "margine_pct": 56.9
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 92214.35,
+          "costi": {
+            "personale": 24810.33,
+            "produzione": 13791.058772592529,
+            "gestione": 11179.286407766993,
+            "commerciale": 739.0624980874143,
+            "totale": 50519.74
+          },
+          "margine": 41694.61,
+          "margine_pct": 45.2
+        },
+        "CVM": {
+          "ricavi": 27299.28,
+          "costi": {
+            "personale": 10446.46,
+            "produzione": 4082.7265488447265,
+            "gestione": 4707.0679611650485,
+            "commerciale": 218.79321464379225,
+            "totale": 19455.05
+          },
+          "margine": 7844.23,
+          "margine_pct": 28.7
+        }
+      },
+      "LUGLIO": {
+        "HOTEL": {
+          "ricavi": 571766.98,
+          "costi": {
+            "personale": 104964.32,
+            "produzione": 59269.45374153275,
+            "gestione": 450463.2524271845,
+            "commerciale": 9721.680343661144,
+            "totale": 624418.71
+          },
+          "margine": -52651.73,
+          "margine_pct": -9.2
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 107234.14,
+          "costi": {
+            "personale": 26241.08,
+            "produzione": 11115.907568224817,
+            "gestione": 112615.81310679612,
+            "commerciale": 1823.28827559683,
+            "totale": 151796.09
+          },
+          "margine": -44561.95,
+          "margine_pct": -41.6
+        },
+        "CVM": {
+          "ricavi": 38036.01,
+          "costi": {
+            "personale": 11048.88,
+            "produzione": 3942.818690242443,
+            "gestione": 47417.18446601941,
+            "commerciale": 646.7213807420266,
+            "totale": 63055.6
+          },
+          "margine": -25019.59,
+          "margine_pct": -65.8
+        }
+      },
+      "AGOSTO": {
+        "HOTEL": {
+          "ricavi": 635591.8300000001,
+          "costi": {
+            "personale": 102600.32,
+            "produzione": 51551.99532976573,
+            "gestione": 52330.85514563107,
+            "commerciale": 1981.2439467726065,
+            "totale": 208464.41
+          },
+          "margine": 427127.42,
+          "margine_pct": 67.2
+        },
+        "RESIDENCE_ANGELINA": {
+          "ricavi": 124803.08,
+          "costi": {
+            "personale": 25650.08,
+            "produzione": 10122.609343956448,
+            "gestione": 13082.713786407769,
+            "commerciale": 389.03166327449065,
+            "totale": 49244.43
+          },
+          "margine": 75558.65,
+          "margine_pct": 60.5
+        },
+        "CVM": {
+          "ricavi": 47945.63,
+          "costi": {
+            "personale": 10800.03,
+            "produzione": 3888.8053262778335,
+            "gestione": 5508.511067961164,
+            "commerciale": 149.45438995290274,
+            "totale": 20346.8
+          },
+          "margine": 27598.83,
+          "margine_pct": 57.6
+        }
+      }
+    }
+  },
+  "summary": {
+    "2024": {
+      "HOTEL": {
+        "ricavi_annuali": 1895288.27,
+        "costi_annuali": 1003672.2201139475,
+        "margine_annuale": 891616.0498860525,
+        "margine_pct": 47.043822514980924
+      },
+      "RESIDENCE_ANGELINA": {
+        "ricavi_annuali": 833192.19,
+        "costi_annuali": 619766.8242014525,
+        "margine_annuale": 213425.3657985474,
+        "margine_pct": 25.61538242437767
+      },
+      "CVM": {
+        "ricavi_annuali": 159267.5,
+        "costi_annuali": 100618.7456845999,
+        "margine_annuale": 58648.7543154001,
+        "margine_pct": 36.82405658116069
+      },
+      "GRUPPO_TOTALE": {
+        "ricavi_annuali": 2887747.96,
+        "costi_annuali": 1724057.79,
+        "margine_annuale": 1163690.17,
+        "margine_pct": 40.29749777747224
+      }
+    },
+    "2025": {
+      "HOTEL": {
+        "ricavi_annuali": 2189483.0500000003,
+        "costi_annuali": 1144991.7920276232,
+        "margine_annuale": 1044491.2579723771,
+        "margine_pct": 47.70492550615439
+      },
+      "RESIDENCE_ANGELINA": {
+        "ricavi_annuali": 389837.13,
+        "costi_annuali": 263055.87892684387,
+        "margine_annuale": 126781.25107315613,
+        "margine_pct": 32.52159461392406
+      },
+      "CVM": {
+        "ricavi_annuali": 147509.71,
+        "costi_annuali": 109544.07904553301,
+        "margine_annuale": 37965.63095446698,
+        "margine_pct": 25.737716489624297
+      },
+      "GRUPPO_TOTALE": {
+        "ricavi_annuali": 2726829.89,
+        "costi_annuali": 1517591.75,
+        "margine_annuale": 1209238.1400000001,
+        "margine_pct": 44.34593241164743
+      }
+    }
+  }
+}

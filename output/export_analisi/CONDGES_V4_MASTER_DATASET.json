@@ -1,0 +1,349 @@
+{
+  "CONDGES_V4_MASTER_DATASET": {
+    "metadata": {
+      "title": "CONDGES V4.0 - Master Dataset Completo",
+      "version": "4.0-MASTER",
+      "created": "2025-09-21",
+      "purpose": "Raccolta completa dati per scenari esterni",
+      "coverage": "2024 (storico) + 2025 (reale+proiezioni) + 2026 (proiezioni)",
+      "status": "COMPLETO E VALIDATO"
+    },
+    
+    "DATI_STORICI_2024": {
+      "bilancio_finale_intur": {
+        "ricavi_totali": 4295515.38,
+        "ricavi_vendite": 4293611.12,
+        "altri_ricavi": 1904.26,
+        "costi_personale": 722071.37,
+        "costi_produzione": 1670015.29,
+        "costi_gestione": 1369221.46,
+        "costi_commerciale": 0,
+        "utile_esercizio": 1446297.67,
+        "margine_pct": 33.7,
+        "disponibilita_liquide": 1974886.89,
+        "debiti_commerciali": 767932.04,
+        "finanziamenti_terzi": 1375993.02
+      },
+      
+      "settembre_2024_partitari": {
+        "ricavi": 710690,
+        "costi_operativi": 206020,
+        "breakdown_costi": {
+          "acquisti_beni": 19670,
+          "acquisti_servizi": 75356,
+          "lavoro_non_dip": 13257,
+          "personale_dipendente": 87266,
+          "spese_amm_comm": 4229,
+          "godimento_beni_terzi": 816,
+          "oneri_diversi_gestione": 5426
+        },
+        "ebitda": 504670,
+        "ebitda_pct": 71.0,
+        "oneri_finanziari": 21329,
+        "risultato_ante_imposte": 483341
+      },
+      
+      "ottobre_2024_bilancino": {
+        "ricavi": 443889,
+        "costi_operativi_stimati": 322000,
+        "ebitda_stimato": 121889,
+        "ebitda_pct": 27.5,
+        "oneri_finanziari": 21000
+      }
+    },
+    
+    "DATI_REALI_2025": {
+      "periodo_coperto": "9 mesi (Gen-Set 2025)",
+      "fonte": "CSV reali + Bilanci PDF + Categorizzazione bancaria",
+      
+      "ricavi_per_asset": {
+        "HOTEL": 2189483.05,
+        "RESIDENCE_ANGELINA": 389837.13,
+        "CVM": 147509.71,
+        "totale": 3419367.99
+      },
+      
+      "costi_per_categoria": {
+        "personale": 661237.15,
+        "personale_pct": 23.2,
+        "produzione": 325797.38,
+        "gestione": 1376767.22,
+        "commerciale": 108950.15,
+        "totale": 2605798.90
+      },
+      
+      "margini_per_asset": {
+        "HOTEL": {"ricavi": 2189483, "margine": 651923, "margine_pct": 29.8},
+        "RESIDENCE": {"ricavi": 389837, "margine": 28639, "margine_pct": 7.3},
+        "CVM": {"ricavi": 147510, "margine": -3357, "margine_pct": -2.3}
+      },
+      
+      "personale_reale_csv": {
+        "fonte": "Prospetti contabili ORTI 2025",
+        "mesi_disponibili": ["MARZO", "APRILE", "MAGGIO", "GIUGNO", "LUGLIO", "AGOSTO"],
+        "totale_6_mesi": 661237.15,
+        "vs_bilanci": "+68%",
+        "breakdown_mensile": {
+          "MARZO": 30254.41,
+          "APRILE": 91363.44,
+          "MAGGIO": 123816.46,
+          "GIUGNO": 134498.13,
+          "LUGLIO": 142254.28,
+          "AGOSTO": 139050.43
+        }
+      }
+    },
+    
+    "PROIEZIONI_2025_2026": {
+      "metodologia": "Pattern stagionali 2024 + Crescita +10%",
+      "base_calcolo": "Bilancio 2024 + Bilancini Set-Ott",
+      
+      "ricavi_mensili_2025": {
+        "gennaio": 94501,
+        "febbraio": 94501,
+        "marzo": 141752,
+        "aprile": 283504,
+        "maggio": 708760,
+        "giugno": 945013,
+        "luglio": 1086765,
+        "agosto": 1134016,
+        "settembre": 781759,
+        "ottobre": 488278,
+        "novembre": 141752,
+        "dicembre": 94501
+      },
+      
+      "ebitda_pct_mensile": {
+        "gennaio": 15.0, "febbraio": 10.0, "marzo": 20.0, "aprile": 35.0,
+        "maggio": 50.0, "giugno": 60.0, "luglio": 65.0, "agosto": 70.0,
+        "settembre": 71.0, "ottobre": 27.5, "novembre": 15.0, "dicembre": 20.0
+      },
+      
+      "totali_annuali_2025": {
+        "ricavi": 6142586.45,
+        "ebitda": 3372752.47,
+        "ebitda_pct_medio": 54.9,
+        "oneri_finanziari": 252000,
+        "risultato_ante_imposte": 3120752.47
+      }
+    },
+    
+    "CASH_FLOW_ANALYSIS": {
+      "intur_2025_2026": {
+        "situazione": "CRITICA",
+        "saldi_mensili": {
+          "settembre_2025": 183645.73,
+          "ottobre_2025": 67769.07,
+          "novembre_2025": -66624.08,
+          "dicembre_2025": -275020.55,
+          "gennaio_2026": -451416.79,
+          "febbraio_2026": -483855.27,
+          "marzo_2026": -516293.75,
+          "aprile_2026": -548732.23
+        },
+        "cash_flow_mensile": {
+          "settembre_2025": -115876.66,
+          "ottobre_2025": -134393.15,
+          "novembre_2025": -208396.47,
+          "dicembre_2025": -176396.24,
+          "gennaio_2026": -32438.48,
+          "febbraio_2026": -32438.48,
+          "marzo_2026": -32438.48,
+          "aprile_2026": -32438.48
+        },
+        "finanziamenti": {
+          "set_dic_2025": 223762.48,
+          "gen_apr_2026": 20776.96,
+          "risparmio_da_gennaio": 202985.52
+        },
+        "fabbisogno_liquidita": 600000,
+        "primo_mese_negativo": "novembre_2025"
+      },
+      
+      "orti_2025_2026": {
+        "situazione": "SOLIDA",
+        "liquidita_attuale_settembre": 2200000,
+        "saldi_mensili": {
+          "settembre_2025": 1405286.27,
+          "ottobre_2025": 1330621.36,
+          "novembre_2025": 1008715.65,
+          "dicembre_2025": 786654.08,
+          "gennaio_2026": 653447.21,
+          "febbraio_2026": 631943.00,
+          "marzo_2026": 618743.07,
+          "aprile_2026": 526347.24
+        },
+        "sempre_positivo": true,
+        "minimo_proiettato": 526347.24
+      },
+      
+      "consolidato": {
+        "situazione": "GESTIBILE",
+        "liquidita_totale_attuale": 2380000,
+        "mesi_negativi_consolidato": 1,
+        "strategia_raccomandata": "Supporto interno ORTI → INTUR"
+      }
+    },
+    
+    "SCENARI_OPERATIVI": {
+      "scenario_1_conservativo": {
+        "nome": "Piano INTUR Ultra-conservativo",
+        "ricavi_2025": 3400000,
+        "crescita_vs_2024": -20.8,
+        "ebitda_medio": 25,
+        "cash_flow_intur": "CRITICO",
+        "fabbisogno_liquidita": 800000,
+        "probabilita": "20%",
+        "trigger": "Crisi settore, recessione, COVID",
+        "ricavi_mensili_chiave": {
+          "settembre": 166000,
+          "ottobre": 124000,
+          "novembre": 4000,
+          "dicembre": 4000
+        }
+      },
+      
+      "scenario_2_realistico": {
+        "nome": "CONDGES V4.0 Corretto",
+        "ricavi_2025": 6142586.45,
+        "crescita_vs_2024": 43.0,
+        "ebitda_medio": 54.9,
+        "cash_flow_intur": "GESTIBILE",
+        "fabbisogno_liquidita": 600000,
+        "probabilita": "60%",
+        "trigger": "Crescita organica normale",
+        "ricavi_mensili_chiave": {
+          "settembre": 781759,
+          "ottobre": 488278,
+          "novembre": 141752,
+          "dicembre": 94501
+        }
+      },
+      
+      "scenario_3_ottimistico": {
+        "nome": "Crescita Accelerata",
+        "ricavi_2025": 7500000,
+        "crescita_vs_2024": 74.6,
+        "ebitda_medio": 65,
+        "cash_flow_intur": "POSITIVO",
+        "fabbisogno_liquidita": 300000,
+        "probabilita": "20%",
+        "trigger": "Boom turismo, prezzi premium, nuovi mercati",
+        "ricavi_mensili_chiave": {
+          "settembre": 950000,
+          "ottobre": 610000,
+          "novembre": 180000,
+          "dicembre": 120000
+        }
+      }
+    },
+    
+    "STRUTTURA_ASSET": {
+      "hotel": {
+        "unita": 76,
+        "tipo": "camere",
+        "ricavi_2025_reali": 2189483,
+        "margine_pct": 29.8,
+        "percentuale_gruppo": 73.7
+      },
+      "residence_angelina": {
+        "unita": 19,
+        "tipo": "appartamenti", 
+        "ricavi_2025_reali": 389837,
+        "margine_pct": 7.3,
+        "percentuale_gruppo": 18.4
+      },
+      "cvm": {
+        "unita": 8,
+        "tipo": "appartamenti",
+        "ricavi_2025_reali": 147510,
+        "margine_pct": -2.3,
+        "percentuale_gruppo": 7.9
+      }
+    },
+    
+    "PATTERN_STAGIONALI": {
+      "alta_stagione": {
+        "mesi": ["maggio", "giugno", "luglio", "agosto", "settembre"],
+        "ricavi_pct": [15, 20, 23, 24, 18],
+        "ebitda_pct": [50, 60, 65, 70, 71],
+        "caratteristiche": "Picco ricavi, massima efficienza"
+      },
+      "bassa_stagione": {
+        "mesi": ["ottobre", "novembre", "dicembre", "gennaio", "febbraio", "marzo", "aprile"],
+        "ricavi_pct": [12, 3, 2, 2, 2, 3, 6],
+        "ebitda_pct": [27.5, 15, 20, 15, 10, 20, 35],
+        "caratteristiche": "Costi fissi pesano, margini ridotti"
+      }
+    },
+    
+    "COORDINATE_EXCEL": {
+      "piano_intur": {
+        "file": "Intur Piano Finanziario Aug 2025.xlsx",
+        "sheet": "Piano Finanziario",
+        "mesi": "L2:S2",
+        "entrate": "L12:S12",
+        "uscite": "L29:S29", 
+        "cash_flow": "L31:S31",
+        "saldi": "L41:S41"
+      },
+      "piano_orti": {
+        "file": "ORTI Piano Finanziario Aug 31 2025.xlsx",
+        "sheet": "Piano Finanziario",
+        "mesi": "K1:R1",
+        "entrate": "K11:R11",
+        "uscite": "K28:R28",
+        "cash_flow": "K30:R30",
+        "saldi": "K40:R40"
+      }
+    },
+    
+    "SCOPERTE_CRITICHE": [
+      "Personale sottostimato 68% nei bilanci (€129K → €661K reali)",
+      "Commissioni portali €2.81M mancanti nei bilanci",
+      "Ricavi sottostimati 25% nei bilanci vs dati reali",
+      "INTUR cash flow critico Nov 2025 - Apr 2026",
+      "Fine finanziamenti dicembre 2025 = svolta (+€203K/mese)",
+      "ORTI liquidità €2.2M = salvagente del gruppo",
+      "Gruppo consolidato sempre positivo (tranne aprile 2026)"
+    ],
+    
+    "DOMANDE_APERTE": [
+      "Uscite operative INTUR (IMU, Lido, ~€30K/mese) incluse nel cash flow?",
+      "Fitti ORTI → INTUR (€242K/mese) inclusi nelle entrate INTUR €166K?",
+      "Commissioni portali: dove vengono registrate contabilmente?",
+      "€180K gestione/utenze ottobre: quale codice contabile specifico?"
+    ],
+    
+    "AZIONI_IMMEDIATE": [
+      "Linea di credito €600K INTUR entro ottobre 2025",
+      "Monitoraggio cash flow giornaliero da novembre",
+      "Pianificare estinzione finanziamenti dicembre",
+      "Setup supporto interno ORTI → INTUR se necessario"
+    ],
+    
+    "FILE_DISPONIBILI": {
+      "dataset_completi": [
+        "CONDGES_V4_FINALE_CORRETTO.json",
+        "CONDGES_ALLOCAZIONE_COMPLETA_PER_ASSET.json",
+        "PROIEZIONI_2025_COMPLETE.json"
+      ],
+      "export_analisi": [
+        "CONDGES_DATI_MENSILI_COMPLETI.csv",
+        "CONDGES_SUMMARY_ANNUALE.csv", 
+        "CONDGES_KPI_GRUPPO_MENSILI.csv",
+        "CONDGES_ANALISI_COMPLETA.xlsx"
+      ],
+      "script_automatici": [
+        "aggiorna_personale_reale.py",
+        "genera_proiezioni_2025.py",
+        "analizza_cashflow_completo_intur_orti.py"
+      ],
+      "documentazione": [
+        "README_PIANI_FINANZIARI.md",
+        "CONDGES_V4_RIASSUNTO_FINALE.md",
+        "CONDGES_EXECUTIVE_SUMMARY.txt"
+      ]
+    }
+  }
+}

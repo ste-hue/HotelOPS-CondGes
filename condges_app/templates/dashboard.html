@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONDGES V4.0 - Dashboard Finanziario Dinamico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>CONDGES Dashboard</h1>
+            <p class="subtitle">Gruppo Panorama - Financial Analytics</p>
+            <div class="status-indicator">
+                <span id="connection-status" class="status-dot"></span>
+                <span id="status-text">Connessione...</span>
+            </div>
+        </header>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Caricamento dati da Supabase...</p>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div id="dashboard-content" class="dashboard-content" style="display: none;">
+            
+            <!-- Controls -->
+            <div class="controls">
+                <div class="control-group">
+                    <label for="year-select">Anno:</label>
+                    <select id="year-select">
+                        <option value="">Tutti gli anni</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="month-select">Mese:</label>
+                    <select id="month-select">
+                        <option value="">Tutti i mesi</option>
+                        <option value="1">Gennaio</option>
+                        <option value="2">Febbraio</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Aprile</option>
+                        <option value="5">Maggio</option>
+                        <option value="6">Giugno</option>
+                        <option value="7">Luglio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Settembre</option>
+                        <option value="10">Ottobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Dicembre</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="asset-select">Asset:</label>
+                    <select id="asset-select">
+                        <option value="">Tutti gli asset</option>
+                    </select>
+                </div>
+                
+                <button id="refresh-btn" class="refresh-btn">Aggiorna</button>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid" id="kpi-grid">
+                <!-- KPI cards will be inserted here dynamically -->
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Ricavi Mensili per Asset</h3>
+                    <canvas id="revenue-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Margini Mensili</h3>
+                    <canvas id="margin-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Detailed Tables -->
+            <div class="tables-section">
+                <div class="table-container">
+                    <h3>Dettaglio Mensile</h3>
+                    <div class="table-wrapper">
+                        <table id="monthly-table">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Anno</th>
+                                    <th>Mese</th>
+                                    <th>Ricavi</th>
+                                    <th>Costi Personale</th>
+                                    <th>Costi Produzione</th>
+                                    <th>Costi Gestione</th>
+                                    <th>Costi Commerciali</th>
+                                    <th>Costi Totali</th>
+                                    <th>Margine</th>
+                                    <th>Margine %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="monthly-table-body">
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <h3>Confronto Annuale</h3>
+                    <div class="table-wrapper">
+                        <table id="annual-table">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Anno</th>
+                                    <th>Ricavi Annuali</th>
+                                    <th>Costi Annuali</th>
+                                    <th>Margine Annuale</th>
+                                    <th>Margine %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="annual-table-body">
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Display -->
+        <div id="error-display" class="error-display" style="display: none;">
+            <h3>Errore di Connessione</h3>
+            <p id="error-message"></p>
+            <button onclick="location.reload()">Riprova</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
