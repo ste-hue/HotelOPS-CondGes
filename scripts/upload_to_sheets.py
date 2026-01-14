@@ -230,7 +230,8 @@ def create_summary_sheet(spreadsheet):
     except gspread.WorksheetNotFound:
         ws = spreadsheet.add_worksheet(title=sheet_name, rows=30, cols=10)
 
-    # Contenuto riepilogo
+    # Contenuto riepilogo - COLONNE AGGIORNATE:
+    # H=TOT_RICAVI, I=COSTI_FISSI, J=COSTI_VARIABILI, K=RETRIBUZIONI, L=ONERI, M=PERSONALE, N=TOT_COSTI, O=EBITDA
     summary_data = [
         ["RIEPILOGO DASHBOARD 2025", "", "", ""],
         ["", "", "", ""],
@@ -243,13 +244,15 @@ def create_summary_sheet(spreadsheet):
         ["- Spiaggia", "=SUM(ORTI_Dashboard!F2:F13)", "=SUM(INTUR_Dashboard!F2:F13)", "=B9+C9"],
         ["- Altri", "=SUM(ORTI_Dashboard!G2:G13)", "=SUM(INTUR_Dashboard!G2:G13)", "=B10+C10"],
         ["", "", "", ""],
-        ["COSTI TOTALI", "=SUM(ORTI_Dashboard!L2:L13)", "=SUM(INTUR_Dashboard!L2:L13)", "=B12+C12"],
+        ["COSTI TOTALI", "=SUM(ORTI_Dashboard!N2:N13)", "=SUM(INTUR_Dashboard!N2:N13)", "=B12+C12"],
         ["- Fissi", "=SUM(ORTI_Dashboard!I2:I13)", "=SUM(INTUR_Dashboard!I2:I13)", "=B13+C13"],
         ["- Variabili", "=SUM(ORTI_Dashboard!J2:J13)", "=SUM(INTUR_Dashboard!J2:J13)", "=B14+C14"],
-        ["- Personale", "=SUM(ORTI_Dashboard!K2:K13)", "=SUM(INTUR_Dashboard!K2:K13)", "=B15+C15"],
+        ["- Personale", "=SUM(ORTI_Dashboard!M2:M13)", "=SUM(INTUR_Dashboard!M2:M13)", "=B15+C15"],
+        ["  (Retribuzioni)", "=SUM(ORTI_Dashboard!K2:K13)", "=SUM(INTUR_Dashboard!K2:K13)", "=B16+C16"],
+        ["  (Oneri)", "=SUM(ORTI_Dashboard!L2:L13)", "=SUM(INTUR_Dashboard!L2:L13)", "=B17+C17"],
         ["", "", "", ""],
-        ["EBITDA", "=SUM(ORTI_Dashboard!M2:M13)", "=SUM(INTUR_Dashboard!M2:M13)", "=B17+C17"],
-        ["Margine %", "=B17/B4", "=C17/C4", "=D17/D4"],
+        ["EBITDA", "=SUM(ORTI_Dashboard!O2:O13)", "=SUM(INTUR_Dashboard!O2:O13)", "=B19+C19"],
+        ["Margine %", "=IF(B4=0,0,B19/B4)", "=IF(C4=0,0,C19/C4)", "=IF(D4=0,0,D19/D4)"],
     ]
 
     ws.update(range_name="A1", values=summary_data)
@@ -265,20 +268,25 @@ def create_summary_sheet(spreadsheet):
         "horizontalAlignment": "CENTER",
     })
 
-    ws.format("B4:D17", {
+    ws.format("B4:D19", {
         "numberFormat": {"type": "NUMBER", "pattern": "#,##0.00"},
         "horizontalAlignment": "RIGHT",
     })
 
-    ws.format("B18:D18", {
+    ws.format("B20:D20", {
         "numberFormat": {"type": "PERCENT", "pattern": "0.0%"},
         "horizontalAlignment": "RIGHT",
     })
 
     # Evidenzia EBITDA
-    ws.format("A17:D17", {
+    ws.format("A19:D19", {
         "backgroundColor": {"red": 0.85, "green": 0.92, "blue": 0.83},
         "textFormat": {"bold": True},
+    })
+
+    # Evidenzia Personale (include breakdown)
+    ws.format("A15:D17", {
+        "backgroundColor": {"red": 0.95, "green": 0.95, "blue": 0.85},
     })
 
     print("  Foglio Riepilogo creato con formule")

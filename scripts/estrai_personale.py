@@ -9,22 +9,29 @@ Tipi file:
 - *_PCSTAG_MM_YYYY.xlsx: stagionali
 - *_PCCOLLAB_MM_YYYY.xlsx: collaboratori
 - *_PC_14_YYYY.xlsx: 13ma/14ma fine anno
+
+Output separato:
+- RETRIBUZIONI: stipendi puri
+- ONERI: contributi, accantonamenti, TFR, trasferte
 """
 
 import pandas as pd
 from pathlib import Path
 import re
 
-# Voci da includere (Tipo conto = 'E')
-# ESCLUSE: Ferie, ROL (come da CLAUDE.md)
-VOCI_PERSONALE = [
+# RETRIBUZIONI = stipendi puri
+VOCI_RETRIBUZIONI = [
     'Retribuzioni',
     'Retrib. Stage',
+]
+
+# ONERI = contributi + accantonamenti + altro
+VOCI_ONERI = [
     'Trasferte',
     'Rimborso spese Km extracomune',
-    'Contributi Inps',           # attenzione: minuscolo!
+    'Contributi Inps',
     'Contributi ASPI Inps',
-    'Recupero contributi Inps',  # viene sottratto automaticamente (Avere > Dare)
+    'Recupero contributi Inps',
     'Premio Inail mese',
     'Premio Inail retrib.differite',
     'Accanton. 13ma',
@@ -44,14 +51,15 @@ VOCI_ESCLUSE = [
 
 
 def estrai_personale(file_path: Path) -> dict:
-    """Estrae costo personale da un file PC"""
+    """Estrae costo personale da un file PC, separando retribuzioni da oneri"""
     df = pd.read_excel(file_path, sheet_name='FoglioDati')
 
     # Filtra solo Tipo conto = 'E' (Economico)
     df_eco = df[df['Tipo conto'] == 'E'].copy()
 
     # Calcola saldo per ogni voce
-    totale = 0.0
+    retribuzioni = 0.0
+    oneri = 0.0
     dettaglio = {}
 
     for _, row in df_eco.iterrows():
@@ -64,12 +72,19 @@ def estrai_personale(file_path: Path) -> dict:
         if any(desc.startswith(v) for v in VOCI_ESCLUSE):
             continue
 
-        # Controlla se è una voce da includere
-        for voce in VOCI_PERSONALE:
+        # Check retribuzioni
+        for voce in VOCI_RETRIBUZIONI:
             if desc.startswith(voce) or desc == voce:
-                totale += saldo
-                dettaglio[desc] = dettaglio.get(desc, 0) + saldo
+                retribuzioni += saldo
+                dettaglio[desc] = {'categoria': 'RETRIBUZIONI', 'importo': saldo}
                 break
+        else:
+            # Check oneri
+            for voce in VOCI_ONERI:
+                if desc.startswith(voce) or desc == voce:
+                    oneri += saldo
+                    dettaglio[desc] = {'categoria': 'ONERI', 'importo': saldo}
+                    break
 
     # Estrai mese e anno dal dataframe
     mese = int(df['Mese'].iloc[0])
@@ -78,7 +93,9 @@ def estrai_personale(file_path: Path) -> dict:
     return {
         'anno': anno,
         'mese': mese,
-        'totale': round(totale, 2),
+        'retribuzioni': round(retribuzioni, 2),
+        'oneri': round(oneri, 2),
+        'totale': round(retribuzioni + oneri, 2),
         'dettaglio': dettaglio,
         'file': file_path.name
     }
@@ -139,45 +156,88 @@ def main():
 
     # Aggrega per società/mese (somma dipendenti + stagionali + collaboratori)
     df_agg = df_out.groupby(['societa', 'anno', 'mese']).agg({
+        'retribuzioni': 'sum',
+        'oneri': 'sum',
         'totale': 'sum'
     }).reset_index()
 
     df_agg = df_agg.sort_values(['societa', 'anno', 'mese'])
 
-    # Pivot per vista mensile
-    pivot = df_agg.pivot(index='mese', columns='societa', values='totale').fillna(0)
-    pivot['TOTALE'] = pivot.sum(axis=1)
-
     # Output
     output_path = Path('output')
     output_path.mkdir(exist_ok=True)
 
+    # Pivot per RETRIBUZIONI
+    pivot_retr = df_agg.pivot(index='mese', columns='societa', values='retribuzioni').fillna(0)
+    pivot_retr.columns = [f'{c}_RETRIB' for c in pivot_retr.columns]
+
+    # Pivot per ONERI
+    pivot_oneri = df_agg.pivot(index='mese', columns='societa', values='oneri').fillna(0)
+    pivot_oneri.columns = [f'{c}_ONERI' for c in pivot_oneri.columns]
+
+    # Pivot per TOTALE
+    pivot_tot = df_agg.pivot(index='mese', columns='societa', values='totale').fillna(0)
+    pivot_tot.columns = [f'{c}_TOTALE' for c in pivot_tot.columns]
+
+    # Combina tutto
+    pivot = pd.concat([pivot_retr, pivot_oneri, pivot_tot], axis=1)
+    # Riordina colonne: ORTI_RETRIB, ORTI_ONERI, ORTI_TOTALE, INTUR_RETRIB, etc.
+    cols_order = []
+    for soc in ['ORTI', 'INTUR']:
+        for tipo in ['RETRIB', 'ONERI', 'TOTALE']:
+            col = f'{soc}_{tipo}'
+            if col in pivot.columns:
+                cols_order.append(col)
+    pivot = pivot[cols_order]
+
+    # Aggiungi totali complessivi
+    pivot['TOT_RETRIB'] = pivot[[c for c in pivot.columns if '_RETRIB' in c]].sum(axis=1)
+    pivot['TOT_ONERI'] = pivot[[c for c in pivot.columns if '_ONERI' in c]].sum(axis=1)
+    pivot['TOT_PERSONALE'] = pivot[[c for c in pivot.columns if '_TOTALE' in c]].sum(axis=1)
+
     # Dettaglio per file
-    df_out[['societa', 'tipo', 'anno', 'mese', 'totale', 'file']].to_csv(
+    df_out[['societa', 'tipo', 'anno', 'mese', 'retribuzioni', 'oneri', 'totale', 'file']].to_csv(
         output_path / 'personale_dettaglio.csv', index=False
     )
 
     # Riepilogo mensile
     pivot.to_csv(output_path / 'personale_mensile.csv')
 
-    print("\n" + "="*60)
-    print("RIEPILOGO PERSONALE 2025")
-    print("="*60)
-    print(pivot.to_string(float_format=lambda x: f"€{x:,.2f}"))
+    print("\n" + "="*70)
+    print("RIEPILOGO PERSONALE 2025 - RETRIBUZIONI vs ONERI")
+    print("="*70)
 
-    print("\n" + "-"*60)
-    orti_tot = pivot['ORTI'].sum() if 'ORTI' in pivot.columns else 0
-    intur_tot = pivot['INTUR'].sum() if 'INTUR' in pivot.columns else 0
-    print(f"TOTALE ANNO ORTI:   €{orti_tot:>12,.2f}")
-    print(f"TOTALE ANNO INTUR:  €{intur_tot:>12,.2f}")
-    print(f"TOTALE COMPLESSIVO: €{orti_tot + intur_tot:>12,.2f}")
-    print("-"*60)
+    # Vista semplificata per società
+    for soc in ['ORTI', 'INTUR']:
+        retrib_col = f'{soc}_RETRIB'
+        oneri_col = f'{soc}_ONERI'
+        tot_col = f'{soc}_TOTALE'
+        if tot_col in pivot.columns:
+            print(f"\n{soc}:")
+            print(f"  {'Mese':<6} {'Retribuzioni':>14} {'Oneri':>14} {'Totale':>14}")
+            print(f"  {'-'*6} {'-'*14} {'-'*14} {'-'*14}")
+            for mese in pivot.index:
+                r = pivot.loc[mese, retrib_col] if retrib_col in pivot.columns else 0
+                o = pivot.loc[mese, oneri_col] if oneri_col in pivot.columns else 0
+                t = pivot.loc[mese, tot_col]
+                print(f"  {mese:<6} €{r:>12,.2f} €{o:>12,.2f} €{t:>12,.2f}")
 
-    # Dettaglio per tipo
-    print("\nDETTAGLIO PER TIPO:")
-    tipo_agg = df_out.groupby(['societa', 'tipo'])['totale'].sum()
-    for (soc, tipo), val in tipo_agg.items():
-        print(f"  {soc} - {tipo}: €{val:,.2f}")
+            tot_r = pivot[retrib_col].sum() if retrib_col in pivot.columns else 0
+            tot_o = pivot[oneri_col].sum() if oneri_col in pivot.columns else 0
+            tot_t = pivot[tot_col].sum()
+            print(f"  {'-'*6} {'-'*14} {'-'*14} {'-'*14}")
+            print(f"  {'TOT':<6} €{tot_r:>12,.2f} €{tot_o:>12,.2f} €{tot_t:>12,.2f}")
+
+    print("\n" + "="*70)
+    print("RIEPILOGO COMPLESSIVO")
+    print("="*70)
+    tot_retrib = pivot['TOT_RETRIB'].sum()
+    tot_oneri = pivot['TOT_ONERI'].sum()
+    tot_pers = pivot['TOT_PERSONALE'].sum()
+    print(f"  RETRIBUZIONI TOTALI: €{tot_retrib:>12,.2f}")
+    print(f"  ONERI TOTALI:        €{tot_oneri:>12,.2f}")
+    print(f"  PERSONALE TOTALE:    €{tot_pers:>12,.2f}")
+    print("="*70)
 
 
 if __name__ == '__main__':
